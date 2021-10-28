@@ -17,9 +17,9 @@ namespace TetsingGame
 
         public void Follow(Vector2 pos, Rectangle hitbox, float deltaTime)
         {
-            var position = Matrix.CreateTranslation(new Vector3(-pos.X - (hitbox.Width / 2), -pos.Y - (hitbox.Height / 2), 0));
+            var position = Matrix.CreateTranslation(new Vector3(-pos.X / 2 - (hitbox.Width / 2), -pos.Y / 2 - (hitbox.Height / 2), 0));
 
-            var offset = Matrix.CreateTranslation(new Vector3(Game1.screenSize.X / 2, Game1.screenSize.Y / 2, 0));
+            var offset = Matrix.CreateTranslation(new Vector3(Game1.screenSize.X / 4, Game1.screenSize.Y / 4 + 20, 0));
             var scale = Matrix.CreateScale(new Vector3(2f, 2f, 0));
             //transform = position * offset;
             Matrix newPos = position * offset * scale;
